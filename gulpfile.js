@@ -3,6 +3,8 @@ var plugins = require('gulp-load-plugins')();
 plugins.sass = require('gulp-ruby-sass');
 plugins.ngAnnotate = require('gulp-ng-annotate');
 
+//var ngfilesort = require('gulp-angular-filesort');
+
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 

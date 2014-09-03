@@ -10,9 +10,9 @@ function homeConfig($stateProvider: ng.ui.IStateProvider) {
   });
 }
 
+
 angular
   .module("ngBoilerplate.home", [
-    "home.index",
     "ui.router.state"
   ])
   .config(homeConfig);
