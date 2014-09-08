@@ -33,6 +33,7 @@
     "run-sequence": "^0.3.6",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0",
+    "sort-stream": "^1.0.0",
     "typescript": "^1.0.1"
   }
 }
