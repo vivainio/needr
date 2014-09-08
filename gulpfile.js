@@ -9,6 +9,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 
 
+
 // VARIABLES ======================================================
 var isDist = plugins.util.env.type === 'dist';
 var outputFolder = isDist ? 'dist' : 'build';
@@ -47,6 +48,7 @@ vendoredLibs.forEach(function(lib) {
 });
 
 var injectPaths = injectLibsPaths.concat([
+    destinations.js +"/app/**/module.js",
     isDist? destinations.js + '/app.js' : destinations.js + "/app/**/*.js",
     destinations.js + "/templates.js",
     destinations.css + "/*.css"
@@ -145,6 +147,7 @@ gulp.task('copy-assets', function () {
 
 gulp.task('index', function () {
     var target = gulp.src(globs.index);
+
     return target.pipe(
         plugins.inject(gulp.src(injectPaths, {read: false}), {
             ignorePath: outputFolder,
@@ -152,6 +155,7 @@ gulp.task('index', function () {
         })
     ).pipe(gulp.dest(destinations.index));
 });
+
 
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(globs.sass, ['sass']);
